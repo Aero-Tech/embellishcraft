@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[39,)"
+loaderVersion="[40,)"
 license="MIT License"
 issueTrackerURL="https://github.com/MapperTV/embellishcraft/issues"
 [[mods]]
@@ -16,20 +16,20 @@ description='''EmbellishCraft is a mod that adds various decorative elements to 
 [[dependencies.embellishcraft]]
     modId="forge"
     mandatory=true
-    versionRange="[39,)"
+    versionRange="[40,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.embellishcraft]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.18.1]"
+    versionRange="[1.18.2]"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.embellishcraft]]
     modId="mapperbase"
     mandatory=true
-    versionRange="[1.18.1-4.0,)"
+    versionRange="[1.18.2-4.0,)"
     ordering="AFTER"
     side="BOTH"
