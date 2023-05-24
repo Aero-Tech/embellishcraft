@@ -25,8 +25,8 @@ public class BoltEvent
     @SubscribeEvent
     public static void onRightClickBlock(RightClickBlock event)
     {
-        Player player = event.getPlayer();
-        Level world = event.getWorld();
+        Player player = event.getEntity();
+        Level world = event.getLevel();
         BlockPos pos = event.getPos();
         Block block = world.getBlockState(pos).getBlock();
         Block newBlock = Blocks.AIR;

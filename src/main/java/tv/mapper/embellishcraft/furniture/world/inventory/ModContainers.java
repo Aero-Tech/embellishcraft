@@ -8,7 +8,7 @@ import tv.mapper.embellishcraft.core.ECConstants;
 
 public class ModContainers
 {
-    public static final DeferredRegister<MenuType<?>> CONTAINERS = DeferredRegister.create(ForgeRegistries.CONTAINERS, ECConstants.MODID);
+    public static final DeferredRegister<MenuType<?>> CONTAINERS = DeferredRegister.create(ForgeRegistries.MENU_TYPES, ECConstants.MODID);
 
     // public static final RegistryObject<MenuType<VerticalChestContainer>> VERTICAL_9X1 = CONTAINERS.register("vertical_9x1", () -> new MenuType<>(VerticalChestContainer::createGeneric9X1));
     // public static final RegistryObject<MenuType<VerticalChestContainer>> VERTICAL_9X2 = CONTAINERS.register("vertical_9x2", () -> new MenuType<>(VerticalChestContainer::createGeneric9X2));

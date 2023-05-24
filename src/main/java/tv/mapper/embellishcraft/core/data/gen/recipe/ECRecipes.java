@@ -1,5 +1,6 @@
 package tv.mapper.embellishcraft.core.data.gen.recipe;
 
+import java.util.Objects;
 import java.util.function.Consumer;
 
 import net.minecraft.data.DataGenerator;
@@ -12,6 +13,7 @@ import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
+import net.minecraftforge.registries.ForgeRegistries;
 import tv.mapper.embellishcraft.core.ECConstants;
 import tv.mapper.mapperbase.data.gen.BaseRecipes;
 
@@ -30,7 +32,7 @@ public class ECRecipes extends BaseRecipes
     {
         if(block != null)
         {
-            String name = block.getRegistryName().toString().replace(ECConstants.MODID + ":", "");
+            String name = Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block)).getPath();
 
             if(slab != null)
             {

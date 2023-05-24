@@ -4,9 +4,12 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.DyeColor;
 import net.minecraftforge.client.model.generators.ModelFile.UncheckedModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import tv.mapper.embellishcraft.core.data.gen.ECBlockStates;
 import tv.mapper.embellishcraft.lights.world.level.block.InitLightBlocks;
 import tv.mapper.embellishcraft.lights.world.level.block.LampBlock;
+
+import java.util.Objects;
 
 public class LightBlockStates extends ECBlockStates
 {
@@ -27,8 +30,7 @@ public class LightBlockStates extends ECBlockStates
 
     private void tableLampBlock(LampBlock block)
     {
-        String raw[] = block.getRegistryName().toString().split(":");
-        String name = raw[1];
+        String name = Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block)).getPath();
         getVariantBuilder(block).partialState().with(LampBlock.LIT, true).modelForState().modelFile(new UncheckedModelFile(mod_id + ":block/" + name + "_on")).addModel().partialState().with(LampBlock.LIT, false).modelForState().modelFile(new UncheckedModelFile(mod_id + ":block/" + name)).addModel();
     }
 }

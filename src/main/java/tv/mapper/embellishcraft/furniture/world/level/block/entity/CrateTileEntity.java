@@ -9,7 +9,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.player.Inventory;
@@ -21,8 +20,8 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.wrapper.InvWrapper;
 import tv.mapper.embellishcraft.core.world.block.entity.ModTileEntityTypes;
@@ -67,7 +66,7 @@ public class CrateTileEntity extends RandomizableContainerBlockEntity implements
 
     protected Component getDefaultName()
     {
-        return new TranslatableComponent("embellishcraft.container.wooden_crate");
+        return Component.translatable("embellishcraft.container.wooden_crate");
     }
 
     // @Override
@@ -147,7 +146,7 @@ public class CrateTileEntity extends RandomizableContainerBlockEntity implements
     @Override
     public <T> LazyOptional<T> getCapability(Capability<T> cap, Direction side)
     {
-        if(!this.remove && cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
+        if(!this.remove && cap == ForgeCapabilities.ITEM_HANDLER)
             return this.crateHandler.cast();
 
         return super.getCapability(cap, side);

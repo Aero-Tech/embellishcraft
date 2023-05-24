@@ -4,7 +4,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
+import net.minecraftforge.data.event.GatherDataEvent;
 import tv.mapper.embellishcraft.building.data.gen.BuildingBlockModels;
 import tv.mapper.embellishcraft.building.data.gen.BuildingBlockStates;
 import tv.mapper.embellishcraft.building.data.gen.BuildingItemModels;
@@ -46,57 +46,57 @@ public class ECGenerators
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
         // Recipes
-        generator.addProvider(new ECRecipes(generator));
-        generator.addProvider(new RockRecipes(generator));
-        generator.addProvider(new IndustrialRecipes(generator));
-        generator.addProvider(new BuildingRecipes(generator));
-        generator.addProvider(new FurnitureRecipes(generator));
-        generator.addProvider(new LightRecipes(generator));
+        generator.addProvider(true, new ECRecipes(generator));
+        generator.addProvider(true, new RockRecipes(generator));
+        generator.addProvider(true, new IndustrialRecipes(generator));
+        generator.addProvider(true, new BuildingRecipes(generator));
+        generator.addProvider(true, new FurnitureRecipes(generator));
+        generator.addProvider(true, new LightRecipes(generator));
 
         // Stonecutter
-        generator.addProvider(new ECStonecutterRecipes(generator));
-        generator.addProvider(new RockStoneCutter(generator));
-        generator.addProvider(new BuildingStoneCutter(generator));
+        generator.addProvider(true, new ECStonecutterRecipes(generator));
+        generator.addProvider(true, new RockStoneCutter(generator));
+        generator.addProvider(true, new BuildingStoneCutter(generator));
 
         // Loot Tables
-        generator.addProvider(new ECLootTables(generator));
-        generator.addProvider(new RockLootTables(generator));
-        generator.addProvider(new IndustrialLootTables(generator));
-        generator.addProvider(new BuildingLootTables(generator));
-        generator.addProvider(new FurnitureLootTables(generator));
-        generator.addProvider(new LightLootTables(generator));
+        generator.addProvider(true, new ECLootTables(generator));
+        generator.addProvider(true, new RockLootTables(generator));
+        generator.addProvider(true, new IndustrialLootTables(generator));
+        generator.addProvider(true, new BuildingLootTables(generator));
+        generator.addProvider(true, new FurnitureLootTables(generator));
+        generator.addProvider(true, new LightLootTables(generator));
 
         // Block States
-        generator.addProvider(new ECBlockStates(generator, ECConstants.MODID, existingFileHelper));
-        generator.addProvider(new RockBlockStates(generator, ECConstants.MODID, existingFileHelper));
-        generator.addProvider(new IndustrialBlockStates(generator, ECConstants.MODID, existingFileHelper));
-        generator.addProvider(new BuildingBlockStates(generator, ECConstants.MODID, existingFileHelper));
-        generator.addProvider(new FurnitureBlockStates(generator, ECConstants.MODID, existingFileHelper));
-        generator.addProvider(new LightBlockStates(generator, ECConstants.MODID, existingFileHelper));
+        generator.addProvider(true, new ECBlockStates(generator, ECConstants.MODID, existingFileHelper));
+        generator.addProvider(true, new RockBlockStates(generator, ECConstants.MODID, existingFileHelper));
+        generator.addProvider(true, new IndustrialBlockStates(generator, ECConstants.MODID, existingFileHelper));
+        generator.addProvider(true, new BuildingBlockStates(generator, ECConstants.MODID, existingFileHelper));
+        generator.addProvider(true, new FurnitureBlockStates(generator, ECConstants.MODID, existingFileHelper));
+        generator.addProvider(true, new LightBlockStates(generator, ECConstants.MODID, existingFileHelper));
 
         // Block Models
-        generator.addProvider(new ECBlockModels(generator, ECConstants.MODID, existingFileHelper));
-        generator.addProvider(new RockBlockModels(generator, ECConstants.MODID, existingFileHelper));
-        generator.addProvider(new IndustrialBlockModels(generator, ECConstants.MODID, existingFileHelper));
-        generator.addProvider(new BuildingBlockModels(generator, ECConstants.MODID, existingFileHelper));
-        generator.addProvider(new FurnitureBlockModels(generator, ECConstants.MODID, existingFileHelper));
-        generator.addProvider(new LightBlockModels(generator, ECConstants.MODID, existingFileHelper));
+        generator.addProvider(true, new ECBlockModels(generator, ECConstants.MODID, existingFileHelper));
+        generator.addProvider(true, new RockBlockModels(generator, ECConstants.MODID, existingFileHelper));
+        generator.addProvider(true, new IndustrialBlockModels(generator, ECConstants.MODID, existingFileHelper));
+        generator.addProvider(true, new BuildingBlockModels(generator, ECConstants.MODID, existingFileHelper));
+        generator.addProvider(true, new FurnitureBlockModels(generator, ECConstants.MODID, existingFileHelper));
+        generator.addProvider(true, new LightBlockModels(generator, ECConstants.MODID, existingFileHelper));
 
         // Item Models
-        generator.addProvider(new ECItemModels(generator, ECConstants.MODID, existingFileHelper));
-        generator.addProvider(new RockItemModels(generator, ECConstants.MODID, existingFileHelper));
-        generator.addProvider(new IndustrialItemModels(generator, ECConstants.MODID, existingFileHelper));
-        generator.addProvider(new BuildingItemModels(generator, ECConstants.MODID, existingFileHelper));
-        generator.addProvider(new FurnitureItemModels(generator, ECConstants.MODID, existingFileHelper));
-        generator.addProvider(new LightItemModels(generator, ECConstants.MODID, existingFileHelper));
+        generator.addProvider(true, new ECItemModels(generator, ECConstants.MODID, existingFileHelper));
+        generator.addProvider(true, new RockItemModels(generator, ECConstants.MODID, existingFileHelper));
+        generator.addProvider(true, new IndustrialItemModels(generator, ECConstants.MODID, existingFileHelper));
+        generator.addProvider(true, new BuildingItemModels(generator, ECConstants.MODID, existingFileHelper));
+        generator.addProvider(true, new FurnitureItemModels(generator, ECConstants.MODID, existingFileHelper));
+        generator.addProvider(true, new LightItemModels(generator, ECConstants.MODID, existingFileHelper));
 
         ECBlockTags blockTags = new ECBlockTags(generator, ECConstants.MODID, existingFileHelper);
 
-        generator.addProvider(blockTags);
-        generator.addProvider(new ECItemTags(generator, blockTags, existingFileHelper));
+        generator.addProvider(true, blockTags);
+        generator.addProvider(true, new ECItemTags(generator, blockTags, existingFileHelper));
 
         // Lang
-        generator.addProvider(new ECLang(generator, ECConstants.MODID, "en_us"));
-        generator.addProvider(new ECLang(generator, ECConstants.MODID, "fr_fr"));
+        generator.addProvider(true, new ECLang(generator, ECConstants.MODID, "en_us"));
+        generator.addProvider(true, new ECLang(generator, ECConstants.MODID, "fr_fr"));
     }
 }

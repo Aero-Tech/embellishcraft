@@ -6,7 +6,7 @@ import javax.annotation.Nullable;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
@@ -104,7 +104,7 @@ public class PillowBlock extends BedBlock
             {
                 if(!this.kickVillagerOutOfBed(worldIn, pos))
                 {
-                    player.displayClientMessage(new TranslatableComponent("block.minecraft.bed.occupied"), true);
+                    player.displayClientMessage(Component.translatable("block.minecraft.bed.occupied"), true);
                 }
 
                 return InteractionResult.SUCCESS;
