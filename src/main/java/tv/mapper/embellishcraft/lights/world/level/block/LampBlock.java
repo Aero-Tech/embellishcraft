@@ -1,12 +1,9 @@
 package tv.mapper.embellishcraft.lights.world.level.block;
 
-import java.util.Random;
-
 import javax.annotation.Nullable;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -138,22 +135,14 @@ public class LampBlock extends CustomBlock implements SimpleWaterloggedBlock
     {
         if(!worldIn.isClientSide && !isManual)
         {
-            boolean flag = state.getValue(LIT);
-            if(flag != worldIn.hasNeighborSignal(pos))
+            if(state.getValue(LIT) != worldIn.hasNeighborSignal(pos))
             {
-                if(flag)
-                {
-                    worldIn.scheduleTick(pos, this, 4);
-                }
-                else
-                {
-                    worldIn.setBlock(pos, state.cycle(LIT), 2);
-                }
+                worldIn.setBlock(pos, state.cycle(LIT), 2);
             }
         }
     }
 
-    @Override
+   /* @Override
     public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, Random random)
     {
         if(!worldIn.isClientSide)
@@ -163,7 +152,7 @@ public class LampBlock extends CustomBlock implements SimpleWaterloggedBlock
                 worldIn.setBlock(pos, state.cycle(LIT), 2);
             }
         }
-    }
+    }*/
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder)

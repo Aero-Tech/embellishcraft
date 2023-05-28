@@ -295,12 +295,7 @@ public class CouchBlock extends CustomBlock implements SimpleWaterloggedBlock, S
         return state.getBlock() instanceof CouchBlock;
     }
 
-    /**
-     * Returns the blockstate with the given mirror of the passed blockstate. If inapplicable, returns the passed
-     * blockstate.
-     * 
-     * @deprecated call via {@link IBlockState#withMirror(Mirror)} whenever possible. Implementing/overriding is fine.
-     */
+    @Override
     public BlockState mirror(BlockState state, Mirror mirrorIn)
     {
         Direction direction = state.getValue(FACING);

@@ -35,10 +35,10 @@ public class ClientProxy implements IProxy
 
         EntityRenderers.register(InitFurnitureEntities.SIT.get(), SitRenderer::new);
 
-        Predicate<RenderType> cutoutPredicate = renderType -> renderType == RenderType.cutout();
+        /*Predicate<RenderType> cutoutPredicate = renderType -> renderType == RenderType.cutout();
 
         for(RegistryObject<? extends Block> object : InitFurnitureBlocks.CUTOUT_BLOCKS)
-            ItemBlockRenderTypes.setRenderLayer(object.get(), cutoutPredicate);
+            ItemBlockRenderTypes.setRenderLayer(object.get(), cutoutPredicate);*/
     }
 
     // @Override

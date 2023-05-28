@@ -1,0 +1,13 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "#forge:is_cold/overworld",
+    "minecraft:old_growth_spruce_taiga",
+    "minecraft:stony_peaks",
+    "minecraft:windswept_forest",
+    "minecraft:windswept_gravelly_hills",
+    "minecraft:windswept_hills"
+  ],
+  "features": "embellishcraft:larvikite_ore",
+  "step": "underground_ores"
+}

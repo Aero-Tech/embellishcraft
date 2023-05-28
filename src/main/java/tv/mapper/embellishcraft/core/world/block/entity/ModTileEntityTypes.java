@@ -6,6 +6,7 @@ import java.util.List;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -21,6 +22,7 @@ import tv.mapper.embellishcraft.furniture.world.level.block.entity.CrateTileEnti
 import tv.mapper.embellishcraft.furniture.world.level.block.entity.CustomBedTileEntity;
 import tv.mapper.embellishcraft.furniture.world.level.block.entity.CustomChestTileEntity;
 
+@Mod(ECConstants.MODID)
 @EventBusSubscriber(bus = Bus.MOD)
 public class ModTileEntityTypes
 {
@@ -63,7 +65,7 @@ public class ModTileEntityTypes
         event.register(ForgeRegistries.Keys.BLOCK_ENTITY_TYPES,
                 helper -> {
                     helper.register("custom_bed", BlockEntityType.Builder.of(CustomBedTileEntity::new, BEDS.toArray(new CustomBedBlock[InitFurnitureBlocks.FANCY_BEDS.size()])).build(null));
-                    helper.register("crate", BlockEntityType.Builder.of(CustomBedTileEntity::new,CRATES.toArray(new Block[InitFurnitureBlocks.CRATES.size()])).build(null));
+                    helper.register("crate", BlockEntityType.Builder.of(CrateTileEntity::new, CRATES.toArray(new CrateBlock[InitFurnitureBlocks.CRATES.size()])).build(null));
                 });
     }
 }
